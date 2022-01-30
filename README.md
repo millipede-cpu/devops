@@ -33,5 +33,7 @@ DevOps as a role in team projects requires the initial file setup for the reposi
 Remember to include these in your Heroku Config Vars
 
 COOKIE_SECRET "longrandomstring"
+
 DATABASE_URL  postgres://(URI)
+
 PGSSLMODE 'no-verify' 
