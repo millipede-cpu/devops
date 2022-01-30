@@ -1,0 +1,31 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "description": "A guide to database file set up with Node, Express, Cypress,PostgreSQL and steps to deploying web applications to Heroku",
+  "main": "server.js",
+  "scripts": {
+    "test": "cypress open",
+    "start": "node server.js",
+    "dev": "nodemon -r dotenv/config server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/millipede-cpu/devops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/millipede-cpu/devops/issues"
+  },
+  "homepage": "https://github.com/millipede-cpu/devops#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "cypress": "^9.3.1",
+    "dotenv": "^14.3.2",
+    "nodemon": "^2.0.15"
+  }
+}
