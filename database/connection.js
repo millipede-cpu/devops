@@ -1,24 +1,22 @@
-const { Pool } = require("pg");
+// require node-posgtres library
+const pg = require("pg");
 
-// DB URL should either be read from .env in development
-// or set as part of production deployment (e.g. on Heroku)
+// throw error if db url does not exist on .env file
 if (!process.env.DATABASE_URL) {
-	console.log(process.env.DATABASE_URL);
-	throw new Error("Missing DATABASE_URL env var");
+  throw new Error("DATABASE_URL environment variable is not set");
 }
 
-console.log(process.env.DATABASE_URL);
+// assign db by creating a new pg Pool object
+// the connection string is a string that specifies how to connect to the database. It is set to the db url inside the .env file
 
-const isProduction = process.env.NODE_env === "production";
+const inProduction = process.env.NODE_ENV === "production";
 
-// Connect to the database
-// and create a pool of available connections to support simultaneous requests
-const db = new Pool({
+const db = new pg.Pool({
   ssl: {
-    rejectUnauthorized: !isProduction
+    rejectUnauthorized: !inProduction,
   },
-	connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL,
 });
 
-// export the pool object so we can query the DB in other files
+// export the db for other parts of the server to use
 module.exports = db;
