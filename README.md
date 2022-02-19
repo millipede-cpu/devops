@@ -49,3 +49,5 @@ DevOps as a role in team projects requires the initial file setup for the reposi
 - Once your app is deployed...make sure to check it all works first!
 
 - Add the live link to your github repository and show it off to everyone!
+
+- Sometimes your encrypted DATABASE_URL, COOKIE_SECRET, HASHED PASSWORD secrets 🤫 even if they are hidden away in your .env file by being inside your .gitignore file...they can still find their way to Github for all to see 🤯 
